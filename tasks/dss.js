@@ -24,7 +24,8 @@ module.exports = function(grunt){
       template: __dirname + '/../template/',
       template_index: 'index.handlebars',
       output_index: 'index.html',
-      include_empty_files: true
+      include_empty_files: true,
+      custom: ''
     });
 
     // Output options if --verbose cl option is passed
@@ -107,7 +108,8 @@ module.exports = function(grunt){
             // Create HTML ouput
             var html = handlebars.compile(grunt.file.read(template_filepath))({
               project: grunt.file.readJSON('package.json'),
-              files: styleguide
+              files: styleguide,
+              custom: options.custom
             });
 
             var output_type = 'created', output = null;
