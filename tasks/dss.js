@@ -114,7 +114,7 @@ module.exports = function(grunt){
 
             var output_type = 'created', output = null;
             if (grunt.file.exists(output_filepath)) {
-              output_type = 'overwrited';
+              output_type = 'overwritten';
               output = grunt.file.read(output_filepath);
             }
             // avoid write if there is no change
